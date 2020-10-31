@@ -10,7 +10,7 @@ type Node struct {
 	Next *Node
 }
 
-func reverse(node *Node) {
+func reverse(node *Node) *Node{
 	var pre *Node
 	var head = node
 	for head != nil{
@@ -19,6 +19,8 @@ func reverse(node *Node) {
 		pre = head
 		head = next
 	}
+
+	return pre
 }
 
 func huiwen(node *Node)bool  {
@@ -27,23 +29,28 @@ func huiwen(node *Node)bool  {
 	}
 
 	middle := findMiddle(node)
+	middle=reverse(middle)
 	log.Println("find middle")
-	print(middle)
+	printNode(middle)
 	for middle != nil {
 		if middle.Value != node.Value{
 			return false
 		}
+
+		middle = middle.Next
+		node = node.Next
 	}
 
 	return true
 }
 
-func nodeLength(node *Node)int  {
-	if node == nil{
+func nodeLength(head *Node)int  {
+	if head == nil{
 		return 0
 	}
 
 	var i int
+	node := head
 	for node != nil{
 		i++
 		node = node.Next
@@ -55,7 +62,7 @@ func nodeLength(node *Node)int  {
 func main()  {
 	var arr = []int{1,2,3,4,5,4,3,2,1}
 	var node = construct(arr)
-	print(node)
+	printNode(node)
 	result := huiwen(node)
 	fmt.Println(result)
 }
@@ -78,7 +85,7 @@ func construct(arr []int) *Node {
 		}
 
 		head.Next = node
-		node = head
+		head = node
 	}
 
 	return result
@@ -90,9 +97,10 @@ func findMiddle(node *Node) *Node {
 	}
 
 	var length = nodeLength(node)
-	middle := length%2
+	fmt.Println("len:", length)
+	middle := length/2
 	result := node
-	for i:=0;i<middle;i++{
+	for i:=0;i<=middle;i++{
 		result = result.Next
 	}
 
