@@ -5,4 +5,5 @@
 |---|------|-----|---|-------|
 |11|[盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)|[go](https://github.com/abusizhishen/algorithm/blob/master/leetcode/11.container-with-most-water/main.go)|中等|1|的|
 |46|[全排列](https://leetcode-cn.com/problems/permutations/)|[go](https://github.com/abusizhishen/algorithm/blob/master/leetcode/46.permutations/main.go)|中等|1|的|
+|136|[只出现一次的数字](https://leetcode-cn.com/problems/single-number/)|[go](https://github.com/abusizhishen/algorithm/blob/master/leetcode/136.single-number/main.go)|简单|1|的|
 |283|[移动零](https://leetcode-cn.com/problems/move-zeroes/)|[go](https://github.com/abusizhishen/algorithm/blob/master/leetcode/283.move-zeroes/main.go)|简单|1|的|
